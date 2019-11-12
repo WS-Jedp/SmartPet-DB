@@ -24,7 +24,7 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" method="POST" action="/users/create" id="typeUserForm">
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" method="POST" action="/users/update" id="editTypeUserForm">
                 @csrf
 
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
@@ -34,7 +34,8 @@
                         <label for="type">
                             Tipo de usuario
                         </label>
-                        <input type="text" name="type" id="type" placeholder="Ingresa el nombre" required>
+                        <input type="text" name="type" id="type" placeholder="Ingresa el nombre" required value="{{$typeUser->type}}">
+                        <input type="number" name="id_type_user" id="id_type_user" hidden value="{{$typeUser->id_type_user}}">
                     </div>
                     
                     
@@ -44,7 +45,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear Usuario</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar Usuario</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/users" class="btnSmart btn-secondGreen">Regresar</a>

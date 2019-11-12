@@ -22,4 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Users
 Route::get('/users', 'Users\UserController@usersIndex')->name('users');
 Route::get('users/create', 'Users\UserController@userCreate');
+Route::get('users/edit/{id?}', 'Users\UserController@userEdit');
+Route::post('/users/update', 'Users\UserController@userUpdate');
 Route::post('users/create', 'Users\UserController@createType')->name('createType');
+
+// Subscriptions
+Route::get('/subscriptions', 'Users\UserController@subscriptionsIndex')->name('subscriptions');

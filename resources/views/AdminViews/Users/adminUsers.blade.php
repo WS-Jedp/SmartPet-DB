@@ -24,19 +24,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>Medico</td>
-                        <td>85</td>
-                        <td class="d-flex flex-row actions row justify-content-around">
-                            <div class="m-0 p-0 col-4">
-                                <a href="" class="btnSmart btn-mainBlue">Editar</a>
-                            </div>
-                            <div class="m-0 p-0 col-4">
-                                <a href="" class="btnSmart btn-secondBlue">Eliminar</a>
-                            </div>
-                        </td>
-                    </tr>
+                    @foreach($typesUser as $typeUser)
+                        <tr>
+                            <th>{{$typeUser->id_type_user}}</th>
+                            <td>{{$typeUser->type}}</td>
+                            <td>85</td>
+                            <td class="d-flex flex-row actions row justify-content-around">
+                                <div class="m-0 p-0 col-4">
+                                    <a href="users/edit/{{$typeUser->id_type_user}}" class="btnSmart btn-mainBlue">Editar</a>
+                                </div>
+                                <div class="m-0 p-0 col-4">
+                                    <a href="" class="btnSmart btn-secondBlue">Eliminar</a>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    
                 </tbody>
             </table>
             <div class="col-12 d-flex flex-row justify-content-start align-items-center m-0 p-0 row">
