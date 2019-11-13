@@ -8,14 +8,14 @@
 @section('actionsAdmin')
     <article class="col-12 m-0 p-3 d-flex flex-column justify-content-start align-items-start row sectSubscriptions">
 
-        @if ('createType')
-            <div class="col-12 alert alert-success  alert-dismissible fade show" role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+        
+            <div class="alert alert-success alert-dismissible fade show col-12 d-none" role="alert" id="alertSuccess">
+                <strong id="titleAlert">Accion completada!</strong> Accion completada con exito 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
             </div>
-        @endif
+      
 
         <h2 class="m-0 p-0">Usuarios</h2>
         <hr class="m-0 mb-3 p-0">

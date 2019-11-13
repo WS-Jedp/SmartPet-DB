@@ -242,6 +242,10 @@ Purple = #a176f4
  .menuBtns a{
    transition: 0.3s ease-in-out;
  }
+
+ .menuBtns a:hover{
+   color: white !important;
+ }
  
  .navDecoration{
    width: 0;
