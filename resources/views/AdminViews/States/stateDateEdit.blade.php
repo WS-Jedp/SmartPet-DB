@@ -23,15 +23,16 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formCreateStateDate">
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formEditStateDate">
                 
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
                   
+                    <input type="number" hidden name="id_state_date" id="id_state_date" value="{{$stateDate->id_state_date}}">
                     <div class="col-12 m-0 p-2">
                         <label for="state">
                             Estado
                         </label>
-                        <input type="text" placeholder="Ingresa el estado" name="state" id="state">
+                        <input type="text" placeholder="Ingresa el estado" name="state" id="state" value="{{$stateDate->state}}">
                     </div>
                 </section>
 
@@ -39,7 +40,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear estado</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar estado</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/states" class="btnSmart btn-secondGreen">Regresar</a>

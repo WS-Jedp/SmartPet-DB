@@ -1,5 +1,12 @@
 $(document).ready(function(){
     
+// Close btn
+$('#closeAlert').click(e=>{
+    e.preventDefault();
+    $('#alertSuccess').removeClass('d-flex');
+})
+
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -25,7 +32,7 @@ $(document).ready(function(){
             success: data=>{
                 console.log(data);
                 $('#typeUserForm input[type="text"]').val('');
-                $('#alertSuccess').removeClass('d-none');
+                $('#alertSuccess').addClass('d-flex');
                 $('#titleAlert').text(data.message);
             }
         })
@@ -49,7 +56,7 @@ $(document).ready(function(){
             processData: false,
             success: (data)=>{
                 console.log(data);
-                $('#alertSuccess').removeClass('d-none');
+                $('#alertSuccess').addClass('d-flex');
                 $('#titleAlert').text(data.message);
             }
         })
@@ -77,7 +84,7 @@ $(document).ready(function(){
                 console.log(data)
                 $('#formSubscriptionCreate input[type="text"]').val('');
                 $('#formSubscriptionCreate input[type="number"]').val('');
-                $('#alertSuccess').removeClass('d-none');
+                $('#alertSuccess').addClass('d-flex');
                 $('#titleAlert').text(data.message);
             }
         })
@@ -101,7 +108,7 @@ $(document).ready(function(){
         processData: false,
         success: data=>{
             console.log(data);
-            $('#alertSuccess').removeClass('d-none');
+            $('#alertSuccess').addClass('d-flex');
             $('#titleAlert').text('la subscripcion ha sido editada!')
         }
     })

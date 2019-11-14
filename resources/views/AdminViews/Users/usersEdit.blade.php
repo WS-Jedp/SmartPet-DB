@@ -10,10 +10,10 @@
 
         
             <div class="alert alert-success alert-dismissible fade show col-12 d-none" role="alert" id="alertSuccess">
-                <strong id="titleAlert">Accion completada!</strong> Accion completada con exito 
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                </button>
+                    <strong id="titleAlert">Accion completada!</strong> Accion completada con exito 
+                        <button type="button" class="close"  id="closeAlert">
+                            <span aria-hidden="true">&times;</span>
+                    </button>
             </div>
       
 

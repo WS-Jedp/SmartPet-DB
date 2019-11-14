@@ -7,15 +7,16 @@ use Illuminate\Http\Request;
 
 use App\Models\Users\tbl_type_user;
 use App\Models\Users\tbl_subscription;
+use App\Models\Users\tbl_state_user;
 
 class UserController extends Controller
 {
     //
 
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 // Types of user
     public function usersIndex(){
@@ -136,6 +137,8 @@ class UserController extends Controller
             'status'=>200
         ]);
     }
+
+   
 
 
 }

@@ -57,7 +57,7 @@
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
-            <a>Estados</a>
+            <a href="/states">Estados</a>
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
