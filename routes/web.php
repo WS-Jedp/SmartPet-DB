@@ -84,3 +84,10 @@ Route::get('/medicaments/create', 'Medicaments\medicamentsController@medicamentC
 Route::post('/medicaments/create', 'Medicaments\medicamentsController@medicamentCreate');
 Route::get('/medicaments/edit/{id?}', 'Medicaments\medicamentsController@medicamentEditIndex');
 Route::post('/medicaments/edit', 'Medicaments\medicamentsController@medicamentEdit');
+Route::get('/medicaments/delete/{id?}', 'Medicaments\medicamentsController@deleteMedicament');
+
+// Vaccines
+Route::get('/vaccines', 'Vaccines\vaccinesController@vaccinesIndex')->name('vaccines');
+Route::get('/vaccines/create', 'Vaccines\vaccinesController@createVaccineIndex');
+Route::post('/vaccines/create', 'Vaccines\vaccinesController@createVaccine');
+Route::get('/vaccines/delete/{id?}', 'Vaccines\vaccinesController@deleteVaccine');

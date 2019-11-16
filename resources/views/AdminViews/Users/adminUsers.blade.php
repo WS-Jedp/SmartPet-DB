@@ -34,9 +34,9 @@
                                     <a href="users/type/edit/{{$typeUser->id_type_user}}" class="btnSmart btn-mainBlue">Editar</a>
                                 </div>
                                 <div class="m-0 p-0 col-4">
-                                <button type="button" onclick="send_id({{$typeUser->id_type_user}})"  class="btnSmart btn-secondBlue" data-toggle="modal" data-target="#exampleModalCenter">
-                                    Eliminar
-                                </button>      
+                                    <button type="button" onclick="send_id({{$typeUser->id_type_user}})"  class="btnSmart btn-secondBlue" data-toggle="modal" data-target="#exampleModalCenter">
+                                        Eliminar
+                                    </button>      
                                 </div>
                             </td>
                         </tr>

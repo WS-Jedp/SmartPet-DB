@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class tbl_vaccine extends Model
 {
+
+    protected $primaryKey = 'id_vaccine';
+
     protected $table = 'tbl_vaccines';
 
     public $timestamps = false;

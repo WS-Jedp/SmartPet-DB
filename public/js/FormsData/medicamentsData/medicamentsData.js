@@ -52,11 +52,45 @@ $('#formEditMedicament').submit(e=>{
     formEditMedicament.forEach(e=>{
         dataEditMedicament.append(e.name, e.value);
     });
-
     $.ajax({
-        
+        method: 'POST',
+        url: '/medicaments/edit',
+        data: dataEditMedicament,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: data=>{
+            if(data.status == 200){
+                console.log(data);
+            }else{
+                console.log(data)
+            }
+        }
     });
 
 })
 
 });
+
+// Deletes
+function send_medicamentId(id){
+    $('#dropMedicament').val(id);
+    console.log(id)
+};
+
+function drop_medicament(id){
+    $.ajax({
+        method: 'GET',
+        url: `/medicaments/delete/${id}`,
+        contentType: JSON,
+        processData: false,
+        cache: false,
+        success: (data)=>{
+            if(data.status == 200){
+                location.reload();
+                console.log(data);
+            }
+        }
+        
+    })
+}

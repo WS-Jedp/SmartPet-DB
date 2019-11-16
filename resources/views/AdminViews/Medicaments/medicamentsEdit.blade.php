@@ -57,12 +57,19 @@
 
                     <div class="col-4 m-0 p-2 d-flex flex-column">
                         <label for="id_type_pet">Tipo de mascota</label>
-                            @foreach ($typesPet as $typePet )
-                            <label for="id_type_pet" class="text-black">
-                                <input type="checkbox" value="{{$typePet->id_type_pet}}" name="id_type_pet[]"> 
-                                {{$typePet->type}}
-                            </label>
+                            
+                            
+                        {{-- Fix this still --}}
+                        @foreach($typesPet as $typePet)
+                            @foreach ($typePetHasMedicaments as $typePetHasMedicament)
+                                    <label for="id_type_pet" class="text-black">
+                                        <input type="checkbox"  name="id_type_pet[]" value="{{$typePetHasMedicament->id_type_pet}}"> 
+                                        {{$typePet->type}}
+                                    </label>
                             @endforeach
+                        @endforeach
+                           
+                            
                     </div>
 
                     

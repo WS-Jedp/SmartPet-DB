@@ -34,10 +34,34 @@
                                     <a href="/medicaments/edit/{{$medicament->id_medicament}}" class="btnSmart btn-mainBlue">Editar</a>
                                 </div>
                                 <div class="m-0 p-1 col-6">
-                                    <a href="" class="btnSmart btn-secondBlue">Eliminar</a>
+                                    <button type="button" onclick="send_medicamentId({{$medicament->id_medicament}})"  class="btnSmart btn-secondBlue" data-toggle="modal" data-target="#modalDeleteMedicament">
+                                        Eliminar
+                                    </button>   
                                 </div>
                             </td>
                         </tr>
+
+                        <!-- Modal -->
+<div class="modal fade" id="modalDeleteMedicament" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">¿Estas Seguro?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div class="modal-body">
+                    <p class="text-black">
+                          Estas a punto de eliminar una subscripcion
+                    </p>
+                </div>
+            <div class="modal-footer">
+                <button onclick="drop_medicament(value)" type="button" id="dropMedicament" class="btnSmart btn-mainPurple">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
                     @endforeach
                 </tbody>
             </table>
@@ -49,4 +73,9 @@
         </div>
 
     </article>
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{url('js/FormsData/medicamentsData/medicamentsData.js')}}"></script>
 @endsection
