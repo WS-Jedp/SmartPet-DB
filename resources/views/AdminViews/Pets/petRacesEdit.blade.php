@@ -23,16 +23,18 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formCreateRacePet">
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formEditRacePet">
                 
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
+
+                    <input type="number" hidden id="id_race_pet" name="id_race_pet" value="{{$racePet->id_race_pet}}">
 
                     {{-- Raza --}}
                     <div class="col-6 m-0 p-2">
                         <label for="race">
                             Nombre de la raza
                         </label>
-                        <input type="text" placeholder="Ingresa el nombre" name="race" id="id_race_pet">
+                        <input type="text" placeholder="Ingresa el nombre" name="race" id="id_race_pet" value="{{$racePet->race}}">
                     </div>
                     <div class="col-6 m-0 p-2">
                         <label for="id_type_pet">
@@ -52,7 +54,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear Raza</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar Raza</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/pets" class="btnSmart btn-secondGreen">Regresar</a>

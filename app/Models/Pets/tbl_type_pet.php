@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class tbl_type_pet extends Model
 {
+
+    protected $primaryKey = 'id_type_pet';
+
     protected $table = 'tbl_types_pet';
 
     public $timestamps = false;

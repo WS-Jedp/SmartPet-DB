@@ -25,7 +25,7 @@
     <ul class="d-flex flex-column align-items-center align-items-md-start row col-12">
         
         <li class="col-12 menuBtns">
-              <a>Inicio</a>
+              <a href="/home">Inicio</a>
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
@@ -41,19 +41,19 @@
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
-              <a>Mascotas</a>
+              <a href="/pets">Mascotas</a>
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
-              <a>Servicios</a>
+              <a href="/services">Servicios</a>
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
-              <a>Medicamentos</a>
+              <a href="/medicaments" >Medicamentos</a>
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
-              <a>Vacunas</a>
+              <a href="/vaccines">Vacunas</a>
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
@@ -61,7 +61,7 @@
             <div class="navDecoration"></div>
         </li>
         <li class="col-12 menuBtns">
-            <a href="">Perfil</a>
+            <a href="/profile">Perfil</a>
             <div class="navDecoration"></div>
         </li>
         </ul>
@@ -75,4 +75,9 @@
             {{ __('Logout') }}
     </button>
 </article>
+@endsection
+
+@section('scripts')
+@parent
+<script src="{{url('js/adminCode.js')}}"></script>
 @endsection

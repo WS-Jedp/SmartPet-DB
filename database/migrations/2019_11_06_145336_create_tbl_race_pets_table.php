@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTblRacePetsTable extends Migration
 {
-    public $tableName = 'tbl_races_pets';
+    public $tableName = 'tbl_races_pet';
 
     /**
      * Run the migrations.
@@ -19,7 +19,10 @@ class CreateTblRacePetsTable extends Migration
             $table->engine = 'MyISAM';
             
             $table->bigIncrements('id_race_pet');
+            $table->integer('id_type_pet');
             $table->string('race');
+
+            $table->foreign('id_type_pet')->references('id_type_pet')->on('tbl_types_pet');
         });
     }
 

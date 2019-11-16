@@ -22,16 +22,18 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formCreateTypePet">
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formEditTypePet">
                 
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
+
+                    <input type="number" hidden name="id_type_pet" id="id_type_pet" value="{{$typePet->id_type_pet}}">
 
                     {{-- Tipo --}}
                     <div class="col-12 m-0 p-2">
                         <label for="race">
                             Tipo de mascota
                         </label>
-                        <input type="text" placeholder="Ingresa el tipo de la mascota" name="type" id="type" >
+                        <input type="text" placeholder="Ingresa el tipo de la mascota" name="type" id="type" value="{{$typePet->type}}">
                     </div>
                    
                 </section>
@@ -40,7 +42,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear Tipo</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar Tipo</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/pets" class="btnSmart btn-secondGreen">Regresar</a>

@@ -24,33 +24,35 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formCreateMedicament">
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formEditMedicament">
                 
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
+
+                    <input type="number" value="{{$medicament->id_medicament}}" hidden name="id_medicament" id="id_medicament">
 
                     {{-- Nombres y Apellidos --}}
                     <div class="col-6 m-0 p-2">
                         <label for="name">
                             Nombre del medicamento
                         </label>
-                        <input type="text" placeholder="Ingresa el nombre" name="name" id="name">
+                        <input type="text" placeholder="Ingresa el nombre" name="name" id="name" value="{{$medicament->name}}">
                     </div>
                     <div class="col-3 m-0 p-2">
                         <label for="quantity">
                             Cantidad (gr)
                         </label>
-                        <input type="number" placeholder="Cantidad de la unidad" name="quantity" id="quantity">
+                        <input type="number" placeholder="Cantidad de la unidad" name="quantity" id="quantity" value="{{$medicament->quantity}}">
                     </div>
                     <div class="col-3 m-0 p-2">
                         <label for="inventory">
                             Inventario
                         </label>
-                        <input type="number" placeholder="Cantidad disponible" name="inventory" id="inventory">
+                        <input type="number" placeholder="Cantidad disponible" name="inventory" id="inventory" value="{{$medicament->inventory}}">
                     </div>
 
                     <div class="col-12 m-0 p-2 d-flex flex-column">
                         <label for="description">Descripción</label>
-                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Ingresa la descripcion del medicamnento"></textarea>
+                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Ingresa la descripcion del medicamnento" class="text-black">{{$medicament->description}}</textarea>
                     </div>
 
                     <div class="col-4 m-0 p-2 d-flex flex-column">
@@ -70,7 +72,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear Medicamento</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar Medicamento</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/medicaments" class="btnSmart btn-secondGreen">Regresar</a>

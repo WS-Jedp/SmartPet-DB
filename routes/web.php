@@ -56,3 +56,31 @@ Route::post('/states/dates/create', 'States\statesController@statesDateCreate');
 Route::get('/states/dates/edit/{id?}', 'States\statesController@statesDateEditIndex');
 Route::post('/States/dates/edit', 'States\statesController@statesDateEdit');
 Route::get('/states/dates/delete/{id?}', 'States\statesController@statesDateDelete');
+
+// --------- Pets
+// Types pet
+Route::get('/pets', 'Pets\petsController@petsIndex');
+Route::get('/pets/type/create', 'Pets\petsController@createTypeIndex');
+Route::post('/pets/type/create', 'Pets\petsController@createType');
+Route::get('/pets/type/edit/{id?}', 'Pets\petsController@editTypeIndex');
+Route::post('pets/type/edit', 'Pets\petsController@editType');
+Route::get('pets/type/delete/{id?}', 'Pets\petsController@deleteType');
+// Genders Pet
+Route::get('/pets/genders/create', 'Pets\petsController@createGenderIndex');
+Route::post('/pets/gender/create', 'Pets\petsController@createGender');
+Route::get('/pets/gender/edit/{id?}', 'Pets\petsController@editGenderIndex');
+Route::post('/pets/gender/edit', 'Pets\petsController@editGender');
+Route::get('pets/gender/delete/{id?}', 'Pets\petsController@deleteGender');
+// Races Pet
+Route::get('/pets/races/create', 'Pets\petsController@createRacesIndex');
+Route::post('/pets/races/create', 'Pets\petsController@createRaces');
+Route::get('/pets/races/edit/{id?}', 'Pets\petsController@editRacesIndex');
+Route::post('/pets/races/edit', 'Pets\petsController@editRaces');
+Route::get('/pets/races/delete/{id?}', 'Pets\petsController@deleteRace');
+
+// ------ Medicaments
+Route::get('/medicaments', 'Medicaments\medicamentsController@medicamentsIndex');
+Route::get('/medicaments/create', 'Medicaments\medicamentsController@medicamentCreateIndex');
+Route::post('/medicaments/create', 'Medicaments\medicamentsController@medicamentCreate');
+Route::get('/medicaments/edit/{id?}', 'Medicaments\medicamentsController@medicamentEditIndex');
+Route::post('/medicaments/edit', 'Medicaments\medicamentsController@medicamentEdit');

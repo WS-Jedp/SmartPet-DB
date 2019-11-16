@@ -40,7 +40,7 @@
 <section class="col-12 m-0 p-2 row d-flex flex-row justify-content-around align-items-center">
 
     <article class="col-12 col-md-4 m-0 p-2">
-        <a href="">
+        <a href="/subscriptions">
             <div class="card-sm">
                 <h2>Subscripciones</h2>
             </div>
@@ -64,10 +64,12 @@
     </article>
     
     <article class="col-12 col-md-4 m-0 p-2">
-        <div class="card-sm">
-            <h2>Estados</h2>
-        </div>
-    </article>
+        <a href="/states">
+            <div class="card-sm">
+                <h2>Estados</h2>
+            </div>
+        </a>
+        </article>
 
     <article class="col-12 col-md-4 m-0 p-2">
         <div class="card-sm">

@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-// Close btn
-$('#closeAlert').click(e=>{
-    e.preventDefault();
-    $('#alertSuccess').removeClass('d-flex');
-})
 
     // ------------ Headers -------------
     $.ajaxSetup({
