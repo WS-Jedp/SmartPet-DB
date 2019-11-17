@@ -32,10 +32,10 @@
                 <a href="/subscriptions">Subscripciones</a>
             <div class="navDecoration"></div>
         </li>
-        <li class="col-12 menuBtns">
+        {{-- <li class="col-12 menuBtns">
             <a>Empleados</a>
             <div class="navDecoration"></div>
-        </li>
+        </li> --}}
         <li class="col-12 menuBtns">
             <a href="/users">Usuarios</a>
             <div class="navDecoration"></div>

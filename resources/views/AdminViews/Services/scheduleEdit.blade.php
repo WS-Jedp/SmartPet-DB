@@ -22,8 +22,8 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formCreateTimetable">
-                
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formEditTimetable">
+                <input type="number" hidden name="id_timetable" id="id_timetable" value="{{$timetable->id_timetable}}">
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
 
                     {{-- Nombres y Apellidos --}}
@@ -31,7 +31,7 @@
                         <label for="service">
                             Nombre del horario
                         </label>
-                        <input type="text" placeholder="Ingresa el nombre del servicio" name="name" id="name">
+                        <input type="text" placeholder="Ingresa el nombre del servicio" name="name" value="{{$timetable->name}}">
                     </div>
 
 
@@ -40,22 +40,27 @@
                         <label for="time_start">
                             Hora de comienzo
                         </label>
-                        <input type="time" placeholder="Ingresa la hora de inicio" name="time_start" id="time_start">
+                        <input type="time" placeholder="Ingresa la hora de inicio" name="time_start" value="{{$timetable->time_start}}">
                     </div>
                      <div class="col-6 m-0 p-2">
                         <label for="time_end">
                             Hora de cierre
                         </label>
-                        <input type="time" placeholder="Ingresa la hora de cierre" name="time_end" id="time_end">
+                        <input type="time" placeholder="Ingresa la hora de cierre" name="time_end" value="{{$timetable->time_end}}">
                     </div>
                     
 
                       {{-- weekend --}}
                     <div class="col-6 m-0 p-2">
                         <label for="weekend">
-                            Estado del servicio
+                            Estado del servicio actual: 
+                            @if($timetable->weekend == 0)
+                                <strong class="text-success">Disponible</strong>
+                                @elseif($timetable->weekend != 0)
+                                <strong class="text-danger">No Disponible</strong>
+                            @endif
                         </label>
-                        <select name="weekend" id="weekend">
+                        <select name="weekend">
                             <option value="0">disponible</option>
                             <option value="1">no disponible</option>
                         </select>
@@ -67,7 +72,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear Horario</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar Horario</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/services" class="btnSmart btn-secondGreen">Regresar</a>

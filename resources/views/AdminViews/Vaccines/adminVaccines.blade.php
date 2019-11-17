@@ -33,7 +33,7 @@
                             <td>perro</td>
                             <td class="d-flex flex-row actions row justify-content-around">
                                 <div class="m-0 p-1 col-6">
-                                    <a href="/vaccines/edit{{$vaccine->id_vaccine}}" class="btnSmart btn-mainBlue">Editar</a>
+                                    <a href="/vaccines/edit/{{$vaccine->id_vaccine}}" class="btnSmart btn-mainBlue">Editar</a>
                                 </div>
                                 <div class="m-0 p-1 col-6">
                                     <button type="button" onclick="send_vaccineId({{$vaccine->id_vaccine}})"  class="btnSmart btn-secondBlue" data-toggle="modal" data-target="#modalDeleteVaccine">

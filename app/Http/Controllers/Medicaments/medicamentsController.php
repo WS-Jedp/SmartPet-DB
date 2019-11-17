@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\DB;
 
 class medicamentsController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     // ------------- Medicaments 
     // Index
     public function medicamentsIndex(){

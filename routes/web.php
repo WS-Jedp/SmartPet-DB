@@ -90,4 +90,21 @@ Route::get('/medicaments/delete/{id?}', 'Medicaments\medicamentsController@delet
 Route::get('/vaccines', 'Vaccines\vaccinesController@vaccinesIndex')->name('vaccines');
 Route::get('/vaccines/create', 'Vaccines\vaccinesController@createVaccineIndex');
 Route::post('/vaccines/create', 'Vaccines\vaccinesController@createVaccine');
+Route::get('/vaccines/edit/{id?}', 'Vaccines\vaccinesController@editVaccineIndex');
+Route::post('/vaccines/edit', 'Vaccines\vaccinesController@editVaccine');
 Route::get('/vaccines/delete/{id?}', 'Vaccines\vaccinesController@deleteVaccine');
+
+// Services
+Route::get('/services', 'Services\servicesController@servicesIndex');
+// Timetables
+Route::get('/services/timetables/create', 'Services\servicesController@timetableCreateIndex');
+Route::post('/services/timetables/create', 'Services\servicesController@timetableCreate');
+Route::get('/services/timetables/edit/{id?}', 'Services\servicesController@timetableEditIndex');
+Route::post('/services/timetables/edit', 'Services\servicesController@timetableEdit');
+Route::get('/services/timetables/delete/{id?}', 'Services\servicesController@deleteTimetable');
+// Services
+Route::get('/services/create', 'Services\servicesController@servicesCreateIndex');
+Route::post('/services/create', 'Services\servicesController@serviceCreate');
+Route::get('/services/edit/{id?}', 'Services\servicesController@serviceEditIndex');
+Route::post('/services/edit', 'Services\servicesController@serviceEdit');
+Route::get('/services/delete/{id?}', 'Services\servicesController@serviceDelete');

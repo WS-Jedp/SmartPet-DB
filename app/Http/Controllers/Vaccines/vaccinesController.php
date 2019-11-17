@@ -54,6 +54,33 @@ class vaccinesController extends Controller
         }
     }
 
+    // Edit
+    public function editVaccineIndex($id){
+        $vaccine = tbl_vaccine::findOrFail($id);
+
+        return view('AdminViews\Vaccines\vaccinesEdit', compact('vaccine'));
+    }
+    public function editVaccine(Request $request){
+        try{
+            $vaccine = tbl_vaccine::findOrFail($request->id_vaccine);
+            $vaccine->vaccine = $request->vaccine;
+            $vaccine->how_often = $request->how_often;
+            $vaccine->description = $request->description;
+            $vaccine->save();
+
+            return response()->json([
+                'message'=>'Se ha actualizado la vacuna numero ' . $request->id_vaccine . ' correctamente',
+                'status'=>200
+            ]);
+        }catch(Exception $err){
+            return response()->json([
+                'message'=>'Ha ocurrido un error',
+                'status'=>404,
+                'error'=>$err
+            ]);
+        }
+    }
+
 
     // Delete
     public function deleteVaccine($id){
@@ -81,4 +108,5 @@ class vaccinesController extends Controller
                 ]);            
         }
     }
+
 }

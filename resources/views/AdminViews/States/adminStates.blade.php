@@ -163,9 +163,9 @@
                                         <a href="/states/users/edit/{{$stateUser->id_state_user}}" class="btnSmart btn-mainBlue">Editar</a>
                                     </div>
                                     <div class="m-0 p-0 col-4">
-                                    <button type="button" class="btnSmart btn-secondBlue" data-toggle="modal" data-target="#exampleModalCenterUser" onclick="sendDeleteId({{$stateUser->id_state_user}})">
-                                        Eliminar
-                                    </button>
+                                        <button type="button" class="btnSmart btn-secondBlue" data-toggle="modal" data-target="#exampleModalCenterUser" onclick="sendDeleteId({{$stateUser->id_state_user}})">
+                                            Eliminar
+                                        </button>
                                     </div>                        
                                 </td>
                             </tr>

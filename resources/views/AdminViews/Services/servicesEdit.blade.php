@@ -23,7 +23,8 @@
         </p>
         <div class="col-12 m-0 p-0 d-flex flex-column justify-content-between align-items-start row formData">
         
-            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formCreateService">
+            <form class="col-12 m-0 p-2 d-flex flex-column justify-contetn-center align-items-start row" id="formEditService">
+                <input type="number" name="id_service" id="id_service" value="{{$service->id_service}}" hidden>
                 
                 <section class="col-12 m-0 p-0 d-flex flex-row row">
 
@@ -32,13 +33,13 @@
                         <label for="service">
                             Nombre del servicio
                         </label>
-                        <input type="text" placeholder="Ingresa el nombre del servicio" name="service" id="service">
+                        <input type="text" placeholder="Ingresa el nombre del servicio" name="service" id="service" value="{{$service->service}}">
                     </div>
                     <div class="col-6 m-0 p-2">
                         <label for="price">
                             Precio del servicio
                         </label>
-                        <input type="number" placeholder="Ingresa el precio del servicio" name="price" id="price">
+                        <input type="number" placeholder="Ingresa el precio del servicio" name="price" id="price" value="{{$service->price}}">
                     </div>
 
                     {{-- Description --}}
@@ -46,28 +47,37 @@
                         <label for="description">
                             Descripcion del servicio
                         </label>
-                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Ingresa la descripcion del servicio"></textarea>
+                        <textarea name="description" id="description" cols="30" rows="10" placeholder="Ingresa la descripcion del servicio">{{$service->description}}</textarea>
                     </div>
 
                       {{-- Schedule y Estado --}}
                     
                     <div class="col-6 m-0 p-2">
                         <label for="id_timetable">
-                            Horario del servicio
+                            Horario del servicio actual: <strong>{{$timetableActual->name}}</strong>
+                            
                         </label>
                         <select name="id_timetable" id="id_timetable">
                             @foreach ($timetables as $timetable)
-                                <option value="{{$timetable->id_timetable}}">{{$timetable->name}}</option>         
+                                <option value="{{$timetable->id_timetable}}"
+                                    @if($service->id_timetable == $timetable->id_timetable)
+                                        selected 
+                                    @endif>{{$timetable->name}}</option>         
                             @endforeach           
                         </select>
                     </div>
                     <div class="col-6 m-0 p-2">
                         <label for="state">
-                            Estado del servicio
+                            Estado del servicio actual: 
+                            @if($service->state == 0)
+                                <strong class="text-success">Disponible</strong>
+                                @else
+                                <strong class="text-danger">No Disponible</strong>
+                            @endif
                         </label>
                         <select name="state" id="state">
-                            <option value="0">disponible</option>
-                            <option value="1">no disponible</option>
+                            <option value="0" @if($service->state == 0) selected @endif>disponible</option>
+                            <option value="1" @if($service->state != 0) selected @endif>no disponible</option>
                         </select>
                     </div>
 
@@ -77,7 +87,7 @@
                 <div class="m-0 p-0 col-12 d-flex flex-row row">
 
                     <div class="col-3 m-0 p-2">
-                        <button type="submit" class="btnSmart btn-mainGreen">Crear Servicio</button>
+                        <button type="submit" class="btnSmart btn-mainGreen">Actualizar Servicio</button>
                     </div>
                     <div class="col-3 p-2">
                         <a href="/services" class="btnSmart btn-secondGreen">Regresar</a>
